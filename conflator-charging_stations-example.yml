@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  conflator:
+    # prodcution
+    # image: geometalab/conflator-backend:latest
+    build:
+      context: docker/
+      dockerfile: backend.dockerfile
+    volumes:
+      - ./profiles:/opt/conflator/profiles
+      - ./data:/data
