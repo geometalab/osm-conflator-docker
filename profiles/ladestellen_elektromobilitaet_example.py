@@ -19,7 +19,7 @@ bbox = True
 # for chargingstations this can be very close together, but something like 10 meters leads to multiple new points, 
 # that should acually be duplicates.
 # this issue should be looked into further for non-example datasets, and might need some adaptations for each dataset
-max_distance = 30
+max_distance = 100
 # Delete objects that match query tags but not dataset? False is the default
 delete_unmatched = False
 # If set, and delete_unmatched is False, modify tags on unmatched objects instead

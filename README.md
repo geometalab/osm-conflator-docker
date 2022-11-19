@@ -5,12 +5,16 @@
 
 ## Usage (run) - example with ladestellen_elektromobilitaet_example
 
+**input-data (profile/json)** -> conflate -> preview.json -> audit -> audit_file.json -> conflate (input) -> result_josm.xml -> JOSM Editor -> Upload changes to OSM
+
 ### Generating the to be validated json
 
 ```bash
 docker compose -f conflator-charging_stations-example.yml build
 mkdir -p ./data/chargingstations
 docker compose -f conflator-charging_stations-example.yml run --rm conflator conflate profiles/ladestellen_elektromobilitaet_example.py -v -o /data/chargingstations/result.osm -c /data/chargingstations/preview.json
+# example with json
+docker compose -f conflator-charging_stations-example.yml run --rm conflator conflate -i myplace.json -v -o /data/chargingstations/result.osm -c /data/chargingstations/preview.json
 ```
 
 ### Validate the generated file
